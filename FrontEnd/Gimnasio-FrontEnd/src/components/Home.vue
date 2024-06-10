@@ -20,6 +20,7 @@
   import Menu from '@/components/Menu.vue'
   import ContentOverlay from '@/components/ContentOverlay.vue'
   
+  
   export default {
   
     components: {
@@ -68,3 +69,4 @@
   @import 'styles/content-overlay.scss';
   @import 'styles/media-queries.scss';
   </style>
+  

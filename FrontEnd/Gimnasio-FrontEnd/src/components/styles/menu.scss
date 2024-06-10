@@ -1,4 +1,4 @@
-
+// bootstrap resets
 ul {
   margin: 0;
   padding: 0;
@@ -89,6 +89,7 @@ ul {
   }
 }
 
+// context menu
 .context-menu-container {
   position: absolute;
   left: 40px;
@@ -149,7 +150,7 @@ ul {
   background: #57636d;
 }
 
-
+// links
 .menu__link--active {
   background: #000;
 }
