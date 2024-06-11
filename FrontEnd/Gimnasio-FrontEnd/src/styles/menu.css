@@ -149,7 +149,6 @@ ul {
   background: #57636d;
 }
 
-
 .menu__link--active {
   background: #000;
 }
@@ -165,4 +164,12 @@ ul {
 .slide-fade-enter, .slide-fade-leave-to {
   transform: translate3d(-30px, 0, 0);
   opacity: 0;
+}
+
+.txt {
+  width: 90%;
+  margin-left: 15%;
+  color: #000;
+  font-weight: bold;
+  font-size: 40px;
 }

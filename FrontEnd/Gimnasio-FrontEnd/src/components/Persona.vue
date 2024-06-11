@@ -55,29 +55,23 @@
                             class="w-full px-1 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-1 col-span-2"
                             type="file" placeholder="Fotografia"
                         />
-                        <a href="/Home" >
+                        <a href="/home">
                             <button
-                                class="mt-5 tracking-wide font-semibold bg-green-600 text-gray-100 w-full py-4 rounded-lg hover:bg-red-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none col-span-2">
-                                <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                                    <circle cx="8.5" cy="7" r="4" />
-                                    <path d="M20 8v6M23 11h-6" />
-                                </svg>
-                                <span class="ml-3 ">
-                                    Registrarse
+                                class="mt-5 tracking-wide font-semibold bg-green-700 text-gray-100 w-full py-4 rounded-lg hover:bg-green-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none col-span-2">
+                                
+                                <span>
+                                    Sign Up
                                 </span>
                             </button>
-                          
                         </a>
-                        <a href="/" >
+                        <a href="/"  >
                             <button
-                                class="mt-5 tracking-wide font-semibold bg-red-600 text-gray-100 w-full py-4 rounded-lg hover:bg-red-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none col-span-2">
-                                <span class="ml-3 ">
-                                    Cancelar
+                                class="mt-5 tracking-wide font-semibold bg-red-700 text-gray-100 w-full py-4 rounded-lg hover:bg-red-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none col-span-2">
+                                
+                                <span>
+                                    Cancel
                                 </span>
                             </button>
-                          
                         </a>
                         <p class="mt-6 text-xs text-gray-600 text-center col-span-2">
                             I agree to abide by templatana's
@@ -91,12 +85,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="flex-1 bg-withe-500 text-center hidden lg:flex ">
-            <div class="m-12 xl:m-16 w-10/12 bg-contain bg-center bg-no-repeat "
-                style="background-image: url('https://private-user-images.githubusercontent.com/163441777/323096598-75e27319-c2da-456b-8fc0-9bf3d29f6567.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTcwODY0NTksIm5iZiI6MTcxNzA4NjE1OSwicGF0aCI6Ii8xNjM0NDE3NzcvMzIzMDk2NTk4LTc1ZTI3MzE5LWMyZGEtNDU2Yi04ZmMwLTliZjNkMjlmNjU2Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUzMFQxNjIyMzlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYzY1MzQxZTQ2NTE0ODM4ODAwNGIzMDUwYWZhMDgzN2ZlNjhiMjVhMTkwZGU3MWM0MGM0MmFmODk2MGFjOTFiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.BJNDrNjcS5GdwtDsUslxo6PYmVu-pDMq7-RWhqMB-Vg');"
-                >
             </div>
         </div>
     </div>
