@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-<<<<<<< HEAD
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import Menu from '@/components/Menu.vue'
@@ -32,14 +31,6 @@ import DetallePedidosView from '@/components/views/DetallePedidosView.vue'
 import PagosView from '@/components/views/PagosView.vue'
 import PromocionesView from '@/components/views/PromocionesView.vue'
 import DetalleProductosView from '@/components/views/DetalleProductosView.vue'
-=======
-import LoginView from '@/components/LoginView.vue'
-import RegisterUser from '@/components/RegisterUser.vue'
-import  Home from '@/components/Home.vue'
-import Menu from '@/components/Menu.vue'
-import Persona from '@/components/Persona.vue'
-
->>>>>>> 758ccbc7e7cef3bff31dbc68a0ecae7f47786c35
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,7 +49,6 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: Menu,
-<<<<<<< HEAD
         children:[
           {
             path:'/dashboard', name:'dashboard', component: DashboardView
@@ -149,12 +139,6 @@ const router = createRouter({
           },
         ]
     },
-=======
-      children: [
-        {path: '/personas', name: 'personas', component: Persona}
-      ]
-    }
->>>>>>> 758ccbc7e7cef3bff31dbc68a0ecae7f47786c35
   ]
 })
 

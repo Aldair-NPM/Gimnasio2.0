@@ -1,4 +1,4 @@
-// bootstrap resets
+
 ul {
   margin: 0;
   padding: 0;
@@ -89,7 +89,6 @@ ul {
   }
 }
 
-// context menu
 .context-menu-container {
   position: absolute;
   left: 40px;
@@ -150,10 +149,6 @@ ul {
   background: #57636d;
 }
 
-<<<<<<<< HEAD:FrontEnd/Gimnasio-FrontEnd/src/styles/menu.css
-========
-// links
->>>>>>>> 758ccbc7e7cef3bff31dbc68a0ecae7f47786c35:FrontEnd/Gimnasio-FrontEnd/src/styles/menu.scss
 .menu__link--active {
   background: #000;
 }
@@ -170,7 +165,6 @@ ul {
   transform: translate3d(-30px, 0, 0);
   opacity: 0;
 }
-<<<<<<<< HEAD:FrontEnd/Gimnasio-FrontEnd/src/styles/menu.css
 
 .txt {
   width: 90%;
@@ -179,5 +173,3 @@ ul {
   font-weight: bold;
   font-size: 40px;
 }
-========
->>>>>>>> 758ccbc7e7cef3bff31dbc68a0ecae7f47786c35:FrontEnd/Gimnasio-FrontEnd/src/styles/menu.scss
