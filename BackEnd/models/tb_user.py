@@ -1,14 +1,16 @@
-from sqlalchemy import Table, Column
-from sqlalchemy.sql.sqltypes import Integer, String, DateTime, Date, Float, Boolean
-from config.db import meta,engine
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, Foreignkey
+from sqlalchemy.dialects.sql import LONGTEXT
+from sqlalchemy.orm import relationship
+from Config.db import Base
 
-tb_user= Table("users", meta,
-               Column("id", Integer, primary_key=True),
-               Column("usuario", String(255)),
-               Column("password", String(255)),
-               Column("created_at", DateTime = DateTime.now()),
-               Column("estatus", bool=False),
-               Column("Id_persona", Integer),
-               )
-meta.create_all(engine)
+class User(Base):
+    
+    __Table__ = "users"
+
+    id= Column (Integer, primary_key=True, index= True),
+    usuario = Column(String(255)),
+    password = Column(LONGTEXT),
+    created_at = Column(DateTime),
+    estatus = Column(Boolean, default=False),
+    Id_persona = Column(Integer),
+    #items = relationship("Item", back_popúlates="owner") Clave Foranea
