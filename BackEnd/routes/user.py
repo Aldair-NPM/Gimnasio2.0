@@ -1,30 +1,58 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from datetime import datetime 
+from datetime import datetime
 
 user = APIRouter()
-users = []
+users = [
 
-#userModels
-class model_users(BaseModel):
+]
+class models_user(BaseModel):
     id:str
-    usurio:str
-    contrasena:str
+    usuario:str
+    contrasena: str
     created_at:datetime = datetime.now()
     estatus:bool=False
 
 @user.get("/")
 
-def bienvenida():
-    return "Bienvenido al sistema de apis"
+def helloworld():
+    return "Hola 9°B desde el método GET"
 
 @user.get("/users")
-     
-def get_usuarios():
+
+def getUsers():
     return users
 
-@user.post("/users")
+@user.get("/users/{user_id}")
 
-def save_usuarios(insert_users:model_users):
-    users.append(insert_users)
-    return "Datos guardados"
+def getUser(user_id: str):
+    for user in users:
+        if user.id == user_id:
+            return user
+
+@user.post('/users')
+
+def insertUser(insert_user:models_user):
+    users.append(insert_user)
+    return {"message": f"Se ha insertado un nuevo usuario con el ID: {insert_user.id}"}
+
+@user.put('/users/{user_id}')
+
+def updateUser(update_user:models_user, user_id: str):
+    print(update_user)
+    for index, user in enumerate(users):
+        if user.id == user_id:
+            update_user.id = user.id
+            update_user.created_at = user.created_at
+        
+            users[index] = update_user
+            
+            return {"message": f"Se ha modificado correctamente al usuario con el ID: {user_id}"}
+
+@user.delete('/users/{user_id}')
+
+def deleteUser(user_id: str):
+    for index, user in enumerate(users):
+        if user.id == user_id:
+            users.pop(index)
+            return {"message": f"Se ha eliminado correctamente al usuario con el ID: {user_id}"}
