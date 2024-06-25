@@ -1,58 +1,57 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from datetime import datetime
+from typing import List, Optional
 
 user = APIRouter()
-users = [
+users = []
 
-]
-class models_user(BaseModel):
-    id:str
-    usuario:str
+
+# Modelo de usuario
+class model_user(BaseModel):
+    id: str
+    usuario: str
     contrasena: str
-    created_at:datetime = datetime.now()
-    estatus:bool=False
+    created_at: datetime = datetime.now()
+    estatus: bool = False
+
+# Modelo de usuario para actualización
+class update_user(BaseModel):
+    usuario: Optional[str] = None
+    contrasena: Optional[str] = None
+    estatus: Optional[bool] = None
 
 @user.get("/")
+def bienvenida():
+    return "Bienvenido al sistema de APIs"
 
-def helloworld():
-    return "Hola 9°B desde el método GET"
-
-@user.get("/users")
-
-def getUsers():
+@user.get("/users", response_model=List[model_user], tags=["Usuarios"])
+def get_usuarios():
     return users
 
-@user.get("/users/{user_id}")
+@user.post('/users', response_model=model_user, tags=["Usuarios"])
+def save_usuarios(insert_user: model_user):
+    users.append(insert_user)
+    return insert_user
 
-def getUser(user_id: str):
+@user.put('/users/{user_id}', response_model=model_user, tags=["Usuarios"])
+def update_usuario(user_id: str, update_data: update_user):
     for user in users:
         if user.id == user_id:
+            if update_data.usuario is not None:
+                user.usuario = update_data.usuario
+            if update_data.contrasena is not None:
+                user.contrasena = update_data.contrasena
+            if update_data.estatus is not None:
+                user.estatus = update_data.estatus
             return user
+    raise HTTPException(status_code=404, detail="Usuario no encontrado")
 
-@user.post('/users')
 
-def insertUser(insert_user:models_user):
-    users.append(insert_user)
-    return {"message": f"Se ha insertado un nuevo usuario con el ID: {insert_user.id}"}
 
-@user.put('/users/{user_id}')
-
-def updateUser(update_user:models_user, user_id: str):
-    print(update_user)
-    for index, user in enumerate(users):
+@user.delete('/users/{user_id}', response_model=model_user, tags=["Usuarios"])
+def delete_usuario(user_id: str):
+    for i, user in enumerate(users):
         if user.id == user_id:
-            update_user.id = user.id
-            update_user.created_at = user.created_at
-        
-            users[index] = update_user
-            
-            return {"message": f"Se ha modificado correctamente al usuario con el ID: {user_id}"}
-
-@user.delete('/users/{user_id}')
-
-def deleteUser(user_id: str):
-    for index, user in enumerate(users):
-        if user.id == user_id:
-            users.pop(index)
-            return {"message": f"Se ha eliminado correctamente al usuario con el ID: {user_id}"}
+            return users.pop(i)
+    raise HTTPException(status_code=404, detail="Usuario no encontrado")
