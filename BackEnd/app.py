@@ -3,7 +3,7 @@ from routes.user import user
 from routes.person import person
 
 app=FastAPI(
-    title="Gimnasio S.A. de C.V.",
+    title="Gimnasio 9B",
     description="API para el almacenamiento de informacipn de un gimnasio"
 )
 app.include_router(user)
