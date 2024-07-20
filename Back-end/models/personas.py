@@ -5,12 +5,12 @@ from config.db import Base
 import enum
 
 
-class MyGenero(enum.Enum):
+class MyGenero(str,enum.Enum):
     Masculino = "Masculino"
     Femenino = "Femenino"
     Otro = "Otro"
 
-class MySangre(enum.Enum):
+class MySangre(str,enum.Enum):
     AP = "A+"
     AN = "A-"
     BP = "B+"

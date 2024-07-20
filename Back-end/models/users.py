@@ -7,7 +7,7 @@ import enum
 
 
 
-class MyEstatus(enum.Enum):
+class MyEstatus(str,enum.Enum):
     Activo = "Activo"
     Inactivo = "Inactivo"
     Bloqueado = "Bloqueado"
